@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "683807497906",
+    "project_id": "pet-feeder-phycom",
+    "storage_bucket": "pet-feeder-phycom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683807497906:android:dd77e7ab953931552973ab",
+        "android_client_info": {
+          "package_name": "com.phycom.pet_feeder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT_y6FsOIhqlbmTPimoTcSlO53IRoCmxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

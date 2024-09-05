@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:pet_feeder/view/views.dart';
+import 'package:pet_feeder/view/widgets/router_scaffold.dart';
 
 part 'app_pages.dart';
 
@@ -9,17 +10,24 @@ abstract class AppRouter {
       path: AppPages.login,
       builder: (context, state) => const LoginView(),
     ),
-    GoRoute(
-      path: AppPages.home,
-      builder: (context, state) => const HomeView(),
-    ),
-    GoRoute(
-      path: AppPages.settings,
-      builder: (context, state) => const SettingsView(),
-    ),
-    GoRoute(
-      path: AppPages.profile,
-      builder: (context, state) => const ProfileView(),
+    ShellRoute(
+      routes: [
+        GoRoute(
+          path: AppPages.home,
+          builder: (context, state) => const HomeView(),
+        ),
+        GoRoute(
+          path: AppPages.settings,
+          builder: (context, state) => const SettingsView(),
+        ),
+        GoRoute(
+          path: AppPages.profile,
+          builder: (context, state) => const ProfileView(),
+        ),
+      ],
+      builder: (context, state, child) {
+        return RouterScaffold(child: child);
+      },
     ),
     GoRoute(
       path: AppPages.notifications,
@@ -32,7 +40,7 @@ abstract class AppRouter {
     GoRoute(
       path: AppPages.dispenser,
       builder: (context, state) => DispenserView(
-        id: state.pathParameters['id']!,
+        id: state.extra.toString(),
       ),
     ),
   ];
